@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create User Group</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>Create New User Group</h1>
+    </div>
+</header>
+<div class="container">
+    <form action="#" th:action="@{/usergroups}" th:object="${userGroup}" method="post">
+        <div>
+            <label>Name:</label>
+            <input type="text" th:field="*{name}" />
+        </div>
+        <div>
+            <label>Description:</label>
+            <input type="text" th:field="*{description}" />
+        </div>
+        <div>
+            <button type="submit">Save</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

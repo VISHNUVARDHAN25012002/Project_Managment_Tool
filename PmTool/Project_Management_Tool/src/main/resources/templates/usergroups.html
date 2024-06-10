@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Groups</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>User Groups</h1>
+    </div>
+</header>
+<div class="container">
+    <a href="/usergroups/new">Create New User Group</a>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="userGroup : ${userGroups}">
+                <td th:text="${userGroup.id}"></td>
+                <td th:text="${userGroup.name}"></td>
+                <td th:text="${userGroup.description}"></td>
+                <td>
+                    <a th:href="@{/usergroups/edit/{id}(id=${userGroup.id})}">Edit</a>
+                    <a th:href="@{/usergroups/delete/{id}(id=${userGroup.id})}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
