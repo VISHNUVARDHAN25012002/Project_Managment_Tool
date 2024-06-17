@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Employee</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Create Employee</h1>
+    <form th:action="@{/employees/save}" th:object="${employee}" method="post">
+        <label>First Name: <input type="text" th:field="*{firstName}" required></label><br>
+        <label>Last Name: <input type="text" th:field="*{lastName}" required></label><br>
+        <label>Email: <input type="email" th:field="*{email}" required></label><br>
+        <label>Contact: <input type="text" th:field="*{contact}" required></label><br>
+        <label>Degree: <input type="text" th:field="*{degree}"></label><br>
+        <label>Stream: <input type="text" th:field="*{stream}"></label><br>
+        <label>Address: <input type="text" th:field="*{address}"></label><br>
+        <label>Date of Birth: <input type="text" th:field="*{dateOfBirth}"></label><br>
+        <label>Gender: <input type="text" th:field="*{gender}"></label><br>
+        <label>Department: <input type="text" th:field="*{department}"></label><br>
+        <label>Job Title: <input type="text" th:field="*{jobTitle}"></label><br>
+        <label>Hiring Date: <input type="text" th:field="*{hiringDate}"></label><br>
+        <label>Joining Date: <input type="text" th:field="*{joiningDate}"></label><br>
+        <label>Reporting Manager: <input type="text" th:field="*{reportingManager}"></label><br>
+        <button type="submit">Save</button>
+    </form>
+    <a href="/employees">Back to Employee List</a>
+</body>
+</html>
